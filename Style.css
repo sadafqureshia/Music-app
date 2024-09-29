@@ -1,0 +1,216 @@
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1DB954, #1ED760);
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+.music-player {
+  width: 90%;
+  max-width: 450px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top Section */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Song Art */
+.song-art {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: url('img/image4.jpg') no-repeat center;
+  background-size: cover;
+  margin: 0 auto 20px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+}
+
+/* Current Song Display */
+.current-song {
+  margin: 15px 0;
+}
+
+#currentTitle {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#currentArtist {
+  font-size: 18px;
+  color: #ddd;
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+  width: 100%;
+}
+
+#searchInput {
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 15px 0 0 15px;
+  border: none;
+  width: 70%;
+  outline: none;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.search-container button {
+  font-size: 1.2em;
+  border-radius: 0 15px 15px 0;
+  background: #1DB954;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-container button:hover {
+  background: #1AAE3A;
+  transform: scale(1.05);
+}
+
+/* Playlist Display */
+.playlist {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  max-height: 180px;
+  overflow-y: auto;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+}
+
+.playlist li {
+  padding: 12px;
+  margin: 6px 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+  font-size: 18px;
+}
+
+.playlist li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Playback Controls */
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.custom-btn {
+  background-color: #1DB954;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s, transform 0.3s ease;
+  width: 60px;
+  height: 60px;
+}
+
+.custom-btn:hover {
+  background-color: #1AAE3A;
+  transform: scale(1.1);
+}
+
+.custom-btn:active {
+  transform: scale(0.95);
+}
+
+/* Volume Control */
+.volume {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.volume label {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* Progress Bar */
+.progress-container {
+  position: relative;
+  height: 8px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #1DB954;
+  width: 0;
+  border-radius: 5px;
+  transition: width 0.2s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .music-player {
+      width: 95%;
+  }
+
+  .controls {
+      flex-direction: column;
+  }
+
+  .controls button {
+      width: 100%;
+      margin: 5px 0;
+      border-radius: 20px;
+  }
+
+  .playlist {
+      max-height: 120px;
+  }
+}
